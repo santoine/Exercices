@@ -79,7 +79,6 @@ class Board:
 				if element.content == BOMB:
 					bx = element.x - 1
 					by = element.y - 1
-					#print str(element.x) + ","+str(element.y)
 					#Add one to mark the bomb around the element
 					for x in range(bx, bx + 3):
 						for y in range(by, by + 3):
@@ -140,7 +139,9 @@ def textGame():
 		if movement == "F":
 			b.flag(x,y)
 		if not res:
+			b.print_board()	
 			print "You loose!"
+			break
 		end = b.isGameWon()
 		b.print_board()
 
