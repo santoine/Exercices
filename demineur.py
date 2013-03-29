@@ -53,8 +53,7 @@ class Board:
 			elements.append(row)	
 		return elements
 
-	def print_board(self):
-		#print "".join(str(range(10))
+	def print_board(self):		
 		for row in self.elements:
 			row_content = ""
 			for element in row:
@@ -103,10 +102,7 @@ class Board:
 					for y in range(by, by + 3):
 						if x >= 0 and y >= 0 and x < self.configuration.rows and y < self.configuration.cols:
 							#print "treat :"+ str(x) + ","+str(y)							
-							self.discover(x,y)
-			# 	# Recursively discovers the elements around him
-			# 	for x in range(bx, bx + 3):
-				# for y in range(by, by + 3):
+							self.discover(x,y)			
 				return True
 			elif element.content == BOMB:
 				return False
